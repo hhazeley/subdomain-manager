@@ -1,0 +1,39 @@
+SUBDOMAIN MANAGER - CPANEL QUICK INSTALL
+========================================
+
+1. In cPanel, create a MySQL database and user. Grant the user ALL PRIVILEGES.
+
+2. Upload Subdomain-Manager-cPanel.zip with File Manager into a directory outside
+   public_html, for example:
+
+   /home/CPANEL_USER/subdomain-manager
+
+3. Extract the ZIP in that directory.
+
+4. In Domains or Subdomains, point your application hostname document root to:
+
+   /home/CPANEL_USER/subdomain-manager/public
+
+5. In MultiPHP Manager, select PHP 8.3 or newer for the hostname. Enable:
+
+   ctype, curl, dom, fileinfo, filter, mbstring, openssl, PDO, pdo_mysql,
+   session, tokenizer, xml, and zip
+
+6. Visit:
+
+   https://your-application-hostname/install.php
+
+7. Complete the browser wizard. It verifies the server, MySQL, Cloudflare,
+   and Mailgun; writes .env; runs migrations; creates the first full
+   administrator; and permanently locks the installer.
+
+8. Copy the two cron commands shown on the completion page into
+   cPanel > Cron Jobs.
+
+Future versions can be installed by a full administrator from Updates in
+the application navigation. Back up the application and database first.
+
+The release already contains Composer dependencies and compiled frontend
+assets. Composer, Node.js, npm, SSH, and cPanel Terminal are not required.
+
+See README.md for requirements, Mailgun notes, upgrades, and troubleshooting.
