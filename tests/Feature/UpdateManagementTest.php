@@ -23,7 +23,7 @@ class UpdateManagementTest extends TestCase
             ->get(route('admin.updates.index'))
             ->assertOk()
             ->assertSee('Application updates')
-            ->assertSee('v1.1.0')
+            ->assertSee('v1.1.1')
             ->assertSee('v1.2.0')
             ->assertSee('Install verified update');
 

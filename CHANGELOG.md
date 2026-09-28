@@ -2,6 +2,10 @@
 
 All notable changes to Subdomain Manager are documented here.
 
+## 1.1.1
+
+- Fixed GitHub release and test workflows to compile Vite assets before running view-rendering tests.
+
 ## 1.1.0
 
 - Added administrator approval as a second access gate after email verification.

@@ -43,10 +43,14 @@ jobs:
           cp .env.example .env
           php artisan key:generate
 
-      - name: Test and build
+      - name: Build frontend assets
+        run: npm run build
+
+      - name: Execute tests
+        run: php artisan test
+
+      - name: Prepare production dependencies
         run: |
-          php artisan test
-          npm run build
           composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction --no-progress
 
       - name: Build cPanel package
